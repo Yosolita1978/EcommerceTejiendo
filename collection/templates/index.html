@@ -1,13 +1,78 @@
+
+{% extends 'layouts/base.html' %}
 {% load staticfiles %}
-<!doctype <!DOCTYPE html>
-<html>
-<head>
-    <title>Tejiendo Mi Vida Ecommerce</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-</head>
+{% load humanize %}
+
+
+    <title>
+        {%block title %} Index - {{block.super}}{% endblock %} 
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
 <body>
-    <h1> Hello World!</h1>
-    <p> I'm a basic website </p>
+
+    <nav>
+
+    {%block navigation %} {{block.super}}{% endblock %} 
+
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header>
+
+        {%block header %} {{block.super}}{% endblock %} 
+
+        </header>
+        
+        {%block content %}
+        
+        <div class="container">
+
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">This Will Be My Index
+                <p class="text-muted">Special offers from: {{now|date:"D d M Y"}}</p>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p><a class="btn btn-primary btn-large">See my collection</a>
+        </div>
+
+        <hr class="featurette-divider">
+
+
+        {% endblock %} 
+        
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            {%block footer %} {{block.super}}{% endblock %} 
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
