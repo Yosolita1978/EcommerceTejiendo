@@ -24,10 +24,8 @@
 
 <body>
 
-{% block navigation %}
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -35,9 +33,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -56,22 +53,19 @@
         <!-- /.container -->
     </nav>
 
-{% endblock %}
-
     <!-- Page Content -->
     <div class="container">
 
-{% block header %}
         <header class="jumbotron hero-spacer">
-            <h1>A Warm Welcome!</h1>
+            <h1>Tejiendo Mi Vida</h1>
+            <p class="h3">E-commerce and products handmade</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <p><a class="btn btn-primary btn-large">Call to action!</a>
+            <p><a class="btn btn-primary btn-large">Our Products</a>
             </p>
         </header>
-{% endblock %}
-
 
 {% block content %}
+
         <div class="row">
             <div class="col-lg-12">
                 <h3>Latest Features</h3>
@@ -135,11 +129,10 @@
             </div>
 
         </div>
+
 {% endblock %}
 
 
-
-{% block footer %}
         <footer>
             <div class="row">
                 <div class="col-lg-12">
@@ -148,7 +141,6 @@
             </div>
         </footer>
 
-{% endblock%}
     </div>
     <!-- /.container -->
 

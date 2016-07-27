@@ -1,11 +1,61 @@
-/*!
- * Start Bootstrap - Heroic Features HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-color: #efefef;
+}
+
+.navbar-inverse{
+    background-color: #dfa42e;
+    border-color: #dfa42e;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    color: #000000
+}
+
+hr.featurette-divider{
+    border-top: 3px double #8c8b8b;
+}
+
+hr.style4{
+    border-top: 1px dotted #8c8b8b;
+}
+
+.jumbotron {
+    
+    background: #467587!important;
+}
+    
+header{
+    background: #467587 bottom center no-repeat;
+    background-size: cover; 
+}
+
+
+.jumbotron > h1{
+    color: #ffffff;
+}
+
+.jumbotron > .h3{
+    color: #ffcccc;
+}
+
+.btn-primary{
+    border-color: #de8017;
+    background-color: #de8017;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-primary:hover{
+    border-color: #de8017;
+    background-color: #de8017;
+}
+
+h2{
+    color:#467587;
 }
 
 #now{
@@ -14,12 +64,31 @@ body {
 }
 
 .hero-spacer {
-    margin-top: 50px;
+    margin-top: 5px;
 }
 
 .hero-feature {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
+
+.featurette {
+  padding-left: 50px;
+  margin-bottom: 5px;
+  border-image-source: 5%;
+}
+
+#about{
+    height: 400px;
+    padding-left: 5%;
+    padding-right: 5%; 
+}
+
+#lead{
+  height: 400px;
+  padding-left: 3%;  
+}
+
+
 
 footer {
     margin: 50px 0;
