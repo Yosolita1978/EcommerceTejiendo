@@ -21,12 +21,11 @@
 
         <hr class="featurette-divider">
 
-        <!-- First Featurette -->
         <div class="featurette" id="about">
-            <img class= "img-thumbnail img-responsive pull-right" src="http://placehold.it/300x300">
-            <h2 class="featurette-heading">Special offers from: {{now|date:"D d M Y"}}
-            </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <img class= "img-thumbnail img-responsive pull-right" src="{{special_order.image.url}}">
+            <h2 class="featurette-heading">Special offers from: {{now|date:"D d M Y"}}</h2>
+            <h4>{{special_order.name}}</h4>
+            <p class="lead">{{special_order.description}}</p>
             <p><a class="btn btn-primary btn-large">See my collection</a>
         
 
@@ -36,25 +35,28 @@
 
     <div class="row">
         <div class="col-sm-4">
-            <img class="img-thumbnail img-responsive img-center" src="http://placehold.it/300x300" alt="">
+            <img class="img-thumbnail img-responsive img-center" src="{{amigurumis.image.url}}" alt="">
             <h2>We Do Amigurumis</h2>
-            <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+            <h4>{{amigurumis.name}}</h4>
+            <p>{{amigurumis.description}}</p>
             <p>
             <a href="#" class="btn btn-primary btn-large">Buy Now!</a>
             </p>
         </div>
         <div class="col-sm-4">
-            <img class="img-thumbnail img-responsive img-center" src="http://placehold.it/300x300" alt="">
-            <h2>We Do Scarfs</h2>
-            <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+            <img class="img-thumbnail img-responsive img-center" src="{{baby_special.image.url}}" alt="">
+            <h2>We Do Baby Toys</h2>
+            <h4>{{baby_special.name}}</h4>
+            <p>{{baby_special.description}}</p>
             <p>
             <a href="#" class="btn btn-primary btn-large">Buy Now!</a>
             </p>
         </div>
         <div class="col-sm-4">
-            <img class="img-thumbnail img-responsive img-center" src="http://placehold.it/300x300" alt="">
-            <h2>We Do Baby Clothes</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+            <img class="img-thumbnail img-responsive img-center" src="{{decorations.image.url}}" alt="">
+            <h2>We Do Decorations</h2>
+            <h4>{{decorations.name}}</h4>
+            <p>{{decorations.description}}</p>
             <p>
             <a href="#" class="btn btn-primary btn-large">Buy Now!</a>
             </p>
@@ -64,7 +66,7 @@
 
 {% endblock %}
         
-        <hr>
+        <hr class="featurette-divider">
 
         <!-- Footer -->
         <footer>
@@ -75,10 +77,10 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 </body>
 

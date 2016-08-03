@@ -27,33 +27,27 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="{% url 'home' %}">Tejiendo Mi Vida</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'about' %}">About</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'contact' %}">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-TejiendoMiVida-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>    
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}">TejiendoMiVida</a>
         </div>
-        <!-- /.container -->
+
+        <div class="collapse navbar-collapse" id="bs-TejiendoMiVida-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        </div>
+                
+    </div>
     </nav>
 
-    <!-- Page Content -->
+
+
     <div class="container">
 
         <header class="jumbotron hero-spacer">
@@ -63,6 +57,7 @@
             <p><a class="btn btn-primary btn-large">Our Products</a>
             </p>
         </header>
+
 
 {% block content %}
 
@@ -129,6 +124,7 @@
             </div>
 
         </div>
+    </body>
 
 {% endblock %}
 
@@ -142,13 +138,12 @@
         </footer>
 
     </div>
-    <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 </body>
 

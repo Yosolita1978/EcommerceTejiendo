@@ -9,8 +9,20 @@ body {
     border-color: #dfa42e;
 }
 
+.navbar-inverse .navbar-brand {
+    color: #000000;
+}
+
 .navbar-inverse .navbar-nav > li > a{
     color: #000000
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #000000;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar:hover {
+  background-color: #000000;
 }
 
 hr.featurette-divider{
@@ -26,12 +38,6 @@ hr.style4{
     background: #467587!important;
 }
     
-header{
-    background: #467587 bottom center no-repeat;
-    background-size: cover; 
-}
-
-
 .jumbotron > h1{
     color: #ffffff;
 }
@@ -64,11 +70,11 @@ h2{
 }
 
 .hero-spacer {
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .hero-feature {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .featurette {
@@ -88,7 +94,9 @@ h2{
   padding-left: 3%;  
 }
 
-
+.img-thumbnail{
+   height: 300px; 
+}
 
 footer {
     margin: 50px 0;
