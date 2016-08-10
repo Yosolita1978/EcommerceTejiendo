@@ -15,3 +15,9 @@ def index(request):
         'baby_special':baby_special,
         'decorations':decorations,
     })
+
+def products_detail(request, slug):
+    product = Products.objects.get(slug=slug)
+    return render(request, 'products/products_detail.html', {
+        'product': product,
+        })

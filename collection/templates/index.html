@@ -18,47 +18,53 @@
 {% block content %}
         
     <div class="container">
+        <div class="row">
 
-        <hr class="featurette-divider">
-
-        <div class="featurette" id="about">
-            <img class= "img-thumbnail img-responsive pull-right" src="{{special_order.image.url}}">
-            <h2 class="featurette-heading">Special offers from: {{now|date:"D d M Y"}}</h2>
-            <h4>{{special_order.name}}</h4>
-            <p class="lead">{{special_order.description}}</p>
-            <p><a class="btn btn-primary btn-large">See my collection</a>
+        <div class="col-md-5">
+            <a href="{% url 'products_detail' slug=special_order.slug %}"><img class= "img-responsive img-circle pull-center" src="{{special_order.image.url}}"></a>
+        </div> 
         
+        <div class="col-md-7">
 
-        <hr class="style4">
+            <h2><a href="{% url 'products_detail' slug=special_order.slug %}">Special offers from: {{now|date:"D d M Y"}}</a></h2>
+            
+            <h4><a href="{% url 'products_detail' slug=special_order.slug %}">{{special_order.name}}</a></h4>
+            <p class="lead">{{special_order.description}}</p>
+            <p><a class="btn btn-primary btn-large" href="{% url 'products_detail' slug=special_order.slug %}">Buy it this collection</a></p>
+        </div>
+        
         </div>
     </div>
 
+        <hr class="style4">
+    
+
     <div class="row">
         <div class="col-sm-4">
-            <img class="img-thumbnail img-responsive img-center" src="{{amigurumis.image.url}}" alt="">
-            <h2>We Do Amigurumis</h2>
-            <h4>{{amigurumis.name}}</h4>
+            <a href="{% url 'products_detail' slug=amigurumis.slug %}"><img class="img-thumbnail img-responsive img-center" src="{{amigurumis.image.url}}" alt=""></a>
+            <h2><a href="{% url 'products_detail' slug=amigurumis.slug %}">We Do Amigurumis</h2></a>
+            <h4><a href="{% url 'products_detail' slug=amigurumis.slug %}">{{amigurumis.name}}</h4></a>
             <p>{{amigurumis.description}}</p>
             <p>
-            <a href="#" class="btn btn-primary btn-large">Buy Now!</a>
+            <a href="{% url 'products_detail' slug=amigurumis.slug %}" class="btn btn-primary btn-large">Buy Now!</a>
             </p>
         </div>
         <div class="col-sm-4">
-            <img class="img-thumbnail img-responsive img-center" src="{{baby_special.image.url}}" alt="">
-            <h2>We Do Baby Toys</h2>
-            <h4>{{baby_special.name}}</h4>
+            <a href="{% url 'products_detail' slug=baby_special.slug %}"><img class="img-thumbnail img-responsive img-center" src="{{baby_special.image.url}}" alt=""></a>
+            <h2><a href="{% url 'products_detail' slug=baby_special.slug %}">We Do Baby Toys</a></h2>
+            <h4><a href="{% url 'products_detail' slug=baby_special.slug %}">{{baby_special.name}}</a></h4>
             <p>{{baby_special.description}}</p>
             <p>
-            <a href="#" class="btn btn-primary btn-large">Buy Now!</a>
+            <a href="{% url 'products_detail' slug=baby_special.slug %}" class="btn btn-primary btn-large">Buy Now!</a>
             </p>
         </div>
         <div class="col-sm-4">
-            <img class="img-thumbnail img-responsive img-center" src="{{decorations.image.url}}" alt="">
-            <h2>We Do Decorations</h2>
-            <h4>{{decorations.name}}</h4>
+            <a href="{% url 'products_detail' slug=decorations.slug %}"><img class="img-thumbnail img-responsive img-center" src="{{decorations.image.url}}" alt=""></a>
+            <h2><a href="{% url 'products_detail' slug=decorations.slug %}">We Do Decorations</h2></a>
+            <h4><a href="{% url 'products_detail' slug=decorations.slug %}">{{decorations.name}}</a></h4>
             <p>{{decorations.description}}</p>
             <p>
-            <a href="#" class="btn btn-primary btn-large">Buy Now!</a>
+            <a href="{% url 'products_detail' slug=decorations.slug %}" class="btn btn-primary btn-large">Buy Now!</a>
             </p>
         </div>
     </div>
