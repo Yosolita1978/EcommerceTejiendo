@@ -17,7 +17,7 @@
 
 {% block content %}
         
-<!-- Portfolio Item Heading -->
+<div class="container">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">{{product.name}}
@@ -25,9 +25,8 @@
             </h1>
         </div>
     </div>
-<!-- /.row -->
 
-<!-- Portfolio Item Row -->
+
     <div class="row">
         <div class="col-md-5">
             <img class="img-responsive" src="{{product.image.url}}" alt="">
@@ -36,12 +35,13 @@
         <div class="col-md-7">
         <h3>Project Description</h3>
         <p>{{product.description}}</p>
-        <p><a class="btn btn-primary btn-large"> Buy it! </a>
+        <p><a class="btn btn-primary btn-large"> Buy it! </a></p>
         </div>
 
         </div>
-<!-- /.row -->
+</div>
 
+<div class="container">
     <div class="row">
         <div class="col-lg-12">
             <h3 class="page-header">Product Galery</h3>
@@ -72,7 +72,7 @@
             </div>
 
         </div>
-        <!-- /.row -->
+    </div>
 
 
 {% endblock %}

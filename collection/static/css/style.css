@@ -1,12 +1,83 @@
 
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    background-color: #efefef;
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-color: #ffffff;
+}
+
+header{
+    margin-bottom: 50px;
+}
+
+.logo{
+    background-color: #1DA0B4;
+    height: 100px;
+    line-height: 100px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 31px;
+    margin: 0;
+    padding-left: 4em;
+    color: #f2f2f2;
+    font-weight: normal
+}
+
+.title{
+    background-color: #ffffff;
+    height: 100px;
+    line-height: 100px;
+    font-size: 31px;
+    margin: 0;
+    padding-left: 4em;
+    color: #467587;
+    font-weight: normal
+}
+
+.icons {
+    margin-left: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #f2f2f2;
+}
+
+.icons span{
+    display: block;
+    font-size: 40px;
+    line-height: 60px;
+    color: #f2f2f2;
+
+}
+
+.icons div{
+    height: 100px;
+    text-align: center;
+    box-sizing: 
+
+}
+.icons div:nth-child(1){
+    background-color: #2ecc71;
+}
+
+.icons div:nth-child(2){
+    background-color: #3498db;
+}
+
+.icons div:nth-child(3){
+    background-color: #9b59b6;
+}
+
+.icons div:nth-child(4){
+    background-color: #e67e22;
+}
+
+.icons div:nth-child(5){
+    background-color: #e74c3c;
+}
+
+.icons div:nth-child(6){
+    background-color: #f39c12
 }
 
 .navbar-inverse{
-    background-color: #dfa42e;
-    border-color: #dfa42e;
+    background-color: #ffffff;
+    border-color: #ffffff;
 }
 
 .navbar-inverse .navbar-brand {
@@ -33,19 +104,6 @@ hr.style4{
     border-top: 1px dotted #8c8b8b;
 }
 
-.jumbotron {
-    
-    background: #467587!important;
-}
-    
-.jumbotron > h1{
-    color: #ffffff;
-}
-
-.jumbotron > .h3{
-    color: #ffcccc;
-}
-
 .btn-primary{
     border-color: #de8017;
     background-color: #de8017;
@@ -62,25 +120,6 @@ hr.style4{
 
 h2{
     color:#467587;
-}
-
-#now{
-    color: blue;
-
-}
-
-.hero-spacer {
-    margin-top: 3px;
-}
-
-.hero-feature {
-    margin-bottom: 3px;
-}
-
-.featurette {
-  padding-left: 50px;
-  margin-bottom: 5px;
-  border-image-source: 5%;
 }
 
 #about{
