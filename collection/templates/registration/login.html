@@ -1,0 +1,71 @@
+
+{% extends 'layouts/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+
+
+    <title>
+        {%block title %} Login - {{block.super}}{% endblock %} 
+    </title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+<body>
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+        <br><h4> Welcome to TejiendoMiVida </h4>
+        <h4> Please Login </h4></br>
+            <form role="form" action="" method="post">
+                <div class="form-group">
+                {% csrf_token %}
+                <p> {{form.errors}}</p>
+                <p>
+                <label for="id_username"> Username: </label>
+                <input id="id_username" maxlength="254" type="text" name="username" placeholder="Username">
+                </p>
+                <p>
+                <label for="id_password"> Password: </label>
+                <input id="id_password" type="password" name="password" placeholder="Password">
+                </p>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+                <div class="login-help">
+                <p>Forgot your password? <a href="{% url 'password_reset' %}"> click here to reset it.</a></p>
+                </div>
+    </div>
+    
+</div>
+    
+    
+  </body>
+
+
+{% endblock %}
+        
+
+        <footer>
+        <br>
+            {%block footer %} {{block.super}}{% endblock %} 
+        </br>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

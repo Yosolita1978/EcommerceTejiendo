@@ -1,11 +1,10 @@
-
 {% extends 'layouts/base.html' %}
 {% load staticfiles %}
 {% load humanize %}
 
 
     <title>
-        {%block title %} {{product.name}} - {{block.super}}{% endblock %} 
+        {%block title %} Edit {{product.name}} - {{block.super}}{% endblock %} 
     </title>
 
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -20,8 +19,9 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">{{product.name}}
+            <h1 class="page-header">Edit {{product.name}}
                 <small>Our Product in Sale</small>
+                
             </h1>
         </div>
     </div>
@@ -34,9 +34,11 @@
 
         <div class="col-md-7">
         <h3>Project Description</h3>
-        <p>{{product.description}}</p>
-        <p><a class="btn btn-info btn-large"> Buy it! </a></p>
-        
+        <p>Edit {{product.description}}</p>
+        <form role="form" action="" method="post">
+        {% csrf_token %} 
+        <p>{{ form.as_p }}</p>
+        <p><a class="btn btn-primary btn-large" type="submit"> Edit </a></p>
         </div>
 
         </div>

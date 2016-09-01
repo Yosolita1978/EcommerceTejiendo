@@ -1,0 +1,60 @@
+{% extends 'layouts/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+
+
+    <title>
+        {%block title %} Logout - {{block.super}}{% endblock %} 
+    </title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+<body>
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+        <br><h4> Welcome to TejiendoMiVida </h4>
+        
+            <form role="form" action="" method="post">
+                <div class="form-group">
+                
+                
+                <strong align="center">Thanks for visit us. You've been logged out!</strong>
+            </form>
+        </div>
+        
+    </div>
+    
+</div>
+    
+    
+  </body>
+
+
+{% endblock %}
+        
+
+        <footer>
+        <br>
+            {%block footer %} {{block.super}}{% endblock %} 
+        </br>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

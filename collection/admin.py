@@ -1,5 +1,7 @@
 from django.contrib import admin
 from collection.models import Products
+from django.contrib.sites.requests import RequestSite
+
 
 class ProductsAdmin(admin.ModelAdmin):
     model = Products

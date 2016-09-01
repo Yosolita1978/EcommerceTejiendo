@@ -41,6 +41,18 @@
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %} 
+            <li><a class="login" href="{% url 'auth_logout' %}">Logout </a></li>
+            {% else %}
+            <li><a class="login" href="{% url 'auth_login' %}">Login </a></li>
+            <li><div class="btn-nav"><a class="btn btn-info btn-small navbar-btn" href="{% url 'registration_register' %}"> Sign Up </a></div>
+            {% endif %}
+
+
+
+        </ul>
+
         </div>
                 
     </div>

@@ -1,6 +1,8 @@
 from datetime import datetime
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from collection.forms import ProductsForm
 from collection.models import Products
+from django.contrib.sites.requests import RequestSite
 
 # Create your views here.
 def index(request):
@@ -21,3 +23,5 @@ def products_detail(request, slug):
     return render(request, 'products/products_detail.html', {
         'product': product,
         })
+
+

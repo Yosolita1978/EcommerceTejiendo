@@ -1,0 +1,79 @@
+{% extends 'layouts/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+
+
+    <title>
+        {%block title %} Registration Form - {{block.super}}{% endblock %} 
+    </title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+<body>
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+        <br><h4> Welcome to TejiendoMiVida </h4>
+        <h4> Registration Form </h4></br>
+            <form role="form" action="" method="post">
+                <div class="form-group">
+                {% csrf_token %}
+                <p> {{form.errors}}</p>
+                <p class="required">
+                <label class="required" for="id_username"> Username </label>
+                <input type="text" name="username" id="id_username" placeholder="Username" maxlength="30">
+                <span class="helptext"> Max. 30 characters. Special characters are not allowed.</span>     
+                </p>
+                <p class="required">
+                <label class="required" for="id_email"> Email </label>
+                <input type="email" name="email" id="id_email" placeholder="Email">    
+                </p>
+                <p class="required">
+                <label class="required" for="id_password1"> Password</label>
+                <input type="password" name="password1" id="id_password1" placeholder="Password">    
+                </p>
+                <span class="helptext"> Enter the same password, for verification</span>
+                <p class="required">
+                <label class="required" for="id_password2"> Password</label>
+                <input type="password" name="password2" id="id_password2" placeholder="Password confirmation">    
+                
+                </p>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        
+    </div>
+    
+</div>
+    
+    
+  </body>
+
+
+{% endblock %}
+        
+
+        <footer>
+        <br>
+            {%block footer %} {{block.super}}{% endblock %} 
+        </br>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>
