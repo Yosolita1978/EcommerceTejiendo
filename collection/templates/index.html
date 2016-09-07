@@ -21,7 +21,7 @@
         <div class="row">
 
         <div class="col-md-5">
-            <a href="{% url 'products_detail' slug=special_order.slug %}"><img class= "img-responsive img-circle pull-right" src="{{special_order.image.url}}"></a>
+            <a href="{% url 'products_detail' slug=special_order.slug %}"><img class= "img-responsive img-circle pull-right" src="{{special_order.main_picture.image.url}}"></a>
         </div> 
         
         <div class="col-md-7">
@@ -41,27 +41,27 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <a href="{% url 'products_detail' slug=amigurumis.slug %}"><img class="img-thumbnail img-responsive img-center" src="{{amigurumis.image.url}}" alt=""></a>
-            <h2><a href="{% url 'products_detail' slug=amigurumis.slug %}">We Do Amigurumis</h2></a>
-            <h4><a href="{% url 'products_detail' slug=amigurumis.slug %}">{{amigurumis.name}}</h4></a>
+            <a href="{% url 'products_detail' slug=amigurumis.slug %}"><img class="img-thumbnail img-responsive img-center" src="{{amigurumis.main_picture.image.url}}" alt=""></a>
+            <h2 class="index"><a href="{% url 'products_detail' slug=amigurumis.slug %}">We Do Amigurumis</h2></a>
+            <h4 class="index"><a href="{% url 'products_detail' slug=amigurumis.slug %}">{{amigurumis.name}}</h4></a>
             <p>{{amigurumis.description}}</p>
             <p>
             <a href="{% url 'products_detail' slug=amigurumis.slug %}" class="btn btn-primary btn-large">Buy Now!</a>
             </p>
         </div>
         <div class="col-sm-4">
-            <a href="{% url 'products_detail' slug=baby_special.slug %}"><img class="img-thumbnail img-responsive img-center" src="{{baby_special.image.url}}" alt=""></a>
-            <h2><a href="{% url 'products_detail' slug=baby_special.slug %}">We Do Baby Toys</a></h2>
-            <h4><a href="{% url 'products_detail' slug=baby_special.slug %}">{{baby_special.name}}</a></h4>
+            <a href="{% url 'products_detail' slug=baby_special.slug %}"><img class="img-thumbnail img-responsive img-center" src="{{baby_special.main_picture.image.url}}" alt=""></a>
+            <h2 class="index"><a href="{% url 'products_detail' slug=baby_special.slug %}">We Do Baby Toys</a></h2>
+            <h4 class="index"><a href="{% url 'products_detail' slug=baby_special.slug %}">{{baby_special.name}}</a></h4>
             <p>{{baby_special.description}}</p>
             <p>
             <a href="{% url 'products_detail' slug=baby_special.slug %}" class="btn btn-primary btn-large">Buy Now!</a>
             </p>
         </div>
         <div class="col-sm-4">
-            <a href="{% url 'products_detail' slug=decorations.slug %}"><img class="img-thumbnail img-responsive img-center" src="{{decorations.image.url}}" alt=""></a>
-            <h2><a href="{% url 'products_detail' slug=decorations.slug %}">We Do Decorations</h2></a>
-            <h4><a href="{% url 'products_detail' slug=decorations.slug %}">{{decorations.name}}</a></h4>
+            <a href="{% url 'products_detail' slug=decorations.slug %}"><img class="img-thumbnail img-responsive img-center" src="{{decorations.main_picture.image.url}}" alt=""></a>
+            <h2 class="index"><a href="{% url 'products_detail' slug=decorations.slug %}">We Do Decorations</h2></a>
+            <h4 class="index"><a href="{% url 'products_detail' slug=decorations.slug %}">{{decorations.name}}</a></h4>
             <p>{{decorations.description}}</p>
             <p>
             <a href="{% url 'products_detail' slug=decorations.slug %}" class="btn btn-primary btn-large">Buy Now!</a>

@@ -124,6 +124,24 @@ hr.style4{
     background-color: #de8017;
 }
 
+h2.index{
+    color: #467587;
+    text-align: left;
+}
+
+h4.index{
+    color: #467587;
+    text-align: left;
+}
+
+p.price{
+    font-weight: 900;
+}
+
+p.product{
+    font-weight: 900;
+}
+
 h2{
     color:#467587;
 }

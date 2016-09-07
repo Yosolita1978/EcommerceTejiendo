@@ -29,12 +29,15 @@
 
     <div class="row">
         <div class="col-md-5">
-            <img class="img-responsive" src="{{product.image.url}}" alt="">
+            <img class="img-responsive" src="{{product.main_picture.image.url}}" alt="">
         </div>
 
         <div class="col-md-7">
         <h3>Project Description</h3>
         <p>{{product.description}}</p>
+        <p class="product">{{product.overview|linebreaks}}</p>
+    
+        <p class="price">Price: {{product.price}} USD</p>
         <p><a class="btn btn-info btn-large"> Buy it! </a></p>
         
         </div>
@@ -45,33 +48,17 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="page-header">Product Galery</h3>
+            <h3 class="page-header">Product Gallery</h3>
             </div>
+
+            {% for picture in product.pictures.all %}
 
             <div class="col-sm-3 col-xs-6">
                 <a href="#">
-                    <img class="img-responsive portfolio-item" src="{{product.image.url}}" alt="">
+                    <img class="img-responsive portfolio-item" src="{{picture.image.url}}" alt="">
                 </a>
             </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="{{product.image.url}}" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="{{product.image.url}}" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="{{product.image.url}}" alt="">
-                </a>
-            </div>
-
+            {% endfor %}
         </div>
     </div>
 
