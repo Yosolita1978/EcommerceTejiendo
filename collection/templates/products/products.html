@@ -1,0 +1,67 @@
+{% extends 'layouts/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+
+
+    <title>
+        {%block title %} Catalog - {{block.super}}{% endblock %} 
+    </title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+<body>
+
+{% block content %}
+        
+     <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">Our Catalog Gallery</h1>
+            </div>
+        </div>
+
+         <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 260 }'>    
+        {% for product in products %}
+
+            <div class="grid-item">
+                <a class="thumbnail" href="{% url 'products_detail' slug=product.slug %}">
+                    <img class="img-responsive" src="{{product.main_picture.image.url}}" alt="">
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+        
+        <hr class="featurette-divider">
+
+        <!-- Footer -->
+        <footer>
+            {%block footer %} {{block.super}}{% endblock %} 
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    {% block javascript %}
+
+    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+
+    {% endblock %}
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

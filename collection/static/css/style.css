@@ -51,6 +51,9 @@ header{
 
 }
 
+.grid-item { width: 260px; 
+}
+
 .icons div{
     height: 100px;
     text-align: center;
@@ -100,6 +103,14 @@ header{
 
 .navbar-inverse .navbar-toggle .icon-bar:hover {
   background-color: #000000;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: #000000
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #000000;
 }
 
 hr.featurette-divider{
@@ -154,6 +165,15 @@ h4{
 label {
     font-size: 0;
 }
+
+.img-thumbnail{
+    height: auto!important;
+}
+
+.img-rounded{
+    height: 300px!important;
+}
+
 
 #id_username{
     width: 100%;

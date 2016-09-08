@@ -40,6 +40,7 @@
         <ul class="nav navbar-nav">
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'catalog' %}">Our Catalog</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %} 
@@ -174,6 +175,9 @@
 
     <!-- jQuery -->
     <script src="{% static 'js/jquery.js' %}"></script>
+
+    {% block javascript %}
+    {% endblock %}
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

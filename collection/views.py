@@ -6,8 +6,8 @@ from django.contrib.sites.requests import RequestSite
 
 # Create your views here.
 def index(request):
-    special_order = Products.objects.get(name="Yoshi")
-    amigurumis = Products.objects.get(name="Baby Groot")
+    special_order = Products.objects.get(name="Kayak crochet")
+    amigurumis = Products.objects.get(name="Monkey business")
     baby_special = Products.objects.get(name="Pink Unicorn Crochet")
     decorations = Products.objects.get(name="Amigurumi Cactus")
     return render(request, 'index.html', {
