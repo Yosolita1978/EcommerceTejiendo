@@ -121,6 +121,20 @@ hr.style4{
     border-top: 1px dotted #8c8b8b;
 }
 
+.well {
+    background: #e74c3c;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 31px;
+    margin: 0;
+    color: #f2f2f2;
+    margin-top: 10px;
+}
+
+.well>a, a:focus, a:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+
 .btn-primary{
     border-color: #de8017;
     background-color: #de8017;
@@ -151,6 +165,14 @@ p.price{
 
 p.product{
     font-weight: 900;
+}
+
+h6.login{
+    text-align: center;
+}
+
+a:focus, a:hover {
+    color: #467587; 
 }
 
 h2{

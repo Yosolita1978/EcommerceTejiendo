@@ -1,8 +1,5 @@
-
-from collection.models import Products
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from django.views.generic.list import ListView
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.contrib.auth.views import (
@@ -20,11 +17,8 @@ urlpatterns = patterns('',
     url(r'^contact/$',
         TemplateView.as_view(template_name='contact.html'),
         name='contact'),
-    url(r'^products/$',
-        ListView.as_view(model=Products, context_object_name='products', template_name='products/products.html'),
-        name='catalog'),
-    url(r'^products/(?P<slug>[-\w]+)/$',
-        'collection.views.products_detail', name='products_detail'),
+
+    url(r'^catalog/', include('collection.urls')),
 
     url(r'^accounts/password/reset/$', password_reset, {'template_name': 'registration/password_reset_form.html'},
         name="password_reset"),

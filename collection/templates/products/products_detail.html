@@ -2,6 +2,7 @@
 {% extends 'layouts/base.html' %}
 {% load staticfiles %}
 {% load humanize %}
+{% load payment_button %}
 
 
     <title>
@@ -38,7 +39,8 @@
         <p class="product">{{product.overview|linebreaks}}</p>
     
         <p class="price">Price: {{product.price}} USD</p>
-        <p><a class="btn btn-info btn-large"> Buy it! </a></p>
+        
+        {% buy_now_button %}       
         
         </div>
 
