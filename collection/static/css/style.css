@@ -196,6 +196,9 @@ label {
     height: 300px!important;
 }
 
+center{
+    margin-top: 0!important;
+}
 
 #id_username{
     width: 100%;

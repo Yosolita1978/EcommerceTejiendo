@@ -1,0 +1,51 @@
+
+{% extends 'layouts/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+
+
+    <title>
+        {%block title %} 400 Error - {{block.super}}{% endblock %} 
+    </title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+<body>
+
+{% block content %}
+        
+    <div class="container"> 
+        <div class="col-md-12">
+            <div class="row">
+                <center><img class="404" src="{% static 'images/error500.jpg' %}" alt="Error 404 Tejiendo Mi Vida"></center>
+
+            </div>
+        
+        </div>
+    </div>
+
+
+{% endblock %}
+        
+        <hr class="featurette-divider">
+
+        <!-- Footer -->
+        <footer>
+            {%block footer %} {{block.super}}{% endblock %} 
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

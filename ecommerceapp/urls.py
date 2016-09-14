@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
+from django.views.generic.base import TemplateView
 from django.conf import settings
 from django.contrib.auth.views import (
     password_reset,
@@ -8,6 +9,7 @@ from django.contrib.auth.views import (
     password_reset_confirm,
     password_reset_complete,
     )
+
 
 urlpatterns = patterns('',
     url(r'^$', 'collection.views.index', name='home'),
@@ -39,8 +41,14 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     )
 
+
+
 if settings.DEBUG:
     urlpatterns += patterns('',
         (r'^media/(?P<path>.*)$', 'django.views.static.serve',{
-            'document_root':settings.MEDIA_ROOT}))
+            'document_root':settings.MEDIA_ROOT}),
+        (r'^404/$', TemplateView.as_view(template_name='404.html')),
+        (r'^500/$', TemplateView.as_view(template_name='500.html'))
+    )
+    
 
