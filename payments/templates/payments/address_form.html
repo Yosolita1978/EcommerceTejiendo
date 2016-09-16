@@ -1,0 +1,82 @@
+
+{% extends 'layouts/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+
+
+    <title>
+        {%block title %} Address - {{block.super}}{% endblock %} 
+    </title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+<body>
+
+{% block content %}
+        
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+        <h4> Please {% if form.instance %}confirm{% else %}add{% endif %} your address for shipping </h4><br/>
+            <form role="form" action="" method="post">
+                <div class="form-group">
+                {% csrf_token %}
+                <p> {{form.errors}}</p>
+                <p>
+                <label for="id_full_name"> Full Name: </label>
+                <input id="id_username" maxlength="255" type="text" name="full_name" placeholder="Full Name" value="{{form.full_name.value}}">
+                </p>
+                <p>
+                <label for="id_address"> Address: </label>
+                <textarea cols="40" id="id_address" name="address" placeholder="Apartment, suite, unit, building, floor, etc">{{form.address.value}}</textarea>
+                </p>
+                <p>
+                <label for="id_city"> City: </label>
+                <input id="id_city" maxlength="255" type="text" name="city" placeholder="City" value="{{form.city.value}}">
+                </p>
+                <p>
+                <label for="id_region"> State/Province/Region: </label>
+                <input id="id_region" maxlength="255" type="text" name="region" placeholder="State/Province/Region" value="{{form.region.value}}">
+                </p>
+                <p>
+                <label for="id_postal_code"> Postal Code: </label>
+                <input id="id_postal_code" maxlength="16" type="text" name="postal_code" placeholder="Postal Code " value="{{form.postal_code.value}}">
+                </p>
+                <p>
+                <label for="id_country"> Country: </label>
+                {{form.country}}
+                </p>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+            
+    </div>
+    
+</div>
+
+
+
+{% endblock %}
+        
+        <hr class="featurette-divider">
+
+        <!-- Footer -->
+        <footer>
+            {%block footer %} {{block.super}}{% endblock %} 
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,5 +1,7 @@
-{% if ready_to_buy %}
-<p><a class="btn btn-info btn-large">Go ahead!!!</a></p>
-{% else %}
+{% if not has_account %}
 <p><a class="btn btn-info btn-large" href="{% url 'auth_login' %}?next={{next}}">Buy it!</a></p>
+{% elif not has_address %}
+<p><a class="btn btn-info btn-large" href="{% url 'address_form' %}?next={{next}}">Buy it!</a></p>
+{% else %}
+<p><a class="btn btn-info btn-large">Go ahead!!!</a></p>
 {% endif %}

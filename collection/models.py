@@ -19,3 +19,5 @@ class ProductPicture(models.Model):
 
     def __str__(self):
         return '%s (%s)' %(self.product, self.image)
+
+

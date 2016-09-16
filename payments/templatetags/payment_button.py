@@ -6,7 +6,11 @@ register = template.Library()
 def buy_now_button(context):
     user = context.request.user
 
+    print user.is_authenticated() and user.addresses.exists()
+
     return {
-        'ready_to_buy': user.is_authenticated(),
+        'has_account': user.is_authenticated(),
+        'has_address': user.is_authenticated() and user.addresses.exists(),
         'next': context.request.get_full_path(),
+
     }
