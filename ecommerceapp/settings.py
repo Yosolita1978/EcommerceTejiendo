@@ -142,3 +142,8 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_PORT = 1025
 LOGIN_REDIRECT_URL = "home"
+
+try:
+    from settings_local import *
+except ImportError:
+    pass
