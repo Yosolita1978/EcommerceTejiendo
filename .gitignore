@@ -90,3 +90,6 @@ ENV/
 
 # Databases
 .sqlite3
+
+#Info
+secure_info.py

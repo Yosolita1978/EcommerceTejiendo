@@ -147,3 +147,7 @@ try:
     from settings_local import *
 except ImportError:
     pass
+try:
+    from secure_info import *
+except ImportError:
+    pass
