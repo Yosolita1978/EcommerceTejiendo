@@ -1,6 +1,5 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.core.urlresolvers import reverse
 from .forms import AddressForm
 from django.http import HttpResponseBadRequest
 import braintree
@@ -8,6 +7,8 @@ from collection.models import Products
 from django.conf import settings 
 from .models import Payment
 from datetime import datetime
+from django.core.urlresolvers  import reverse
+from django.views.decorators.http import require_GET
 
 @login_required
 def address_capture(request):
@@ -60,7 +61,7 @@ def checkout(request):
                 product=product, 
                 status='succesful', 
             )
-            return redirect("/")
+    
         else:
             payment = Payment.objects.create(
                 user=request.user, 
@@ -68,9 +69,18 @@ def checkout(request):
                 product=product, 
                 status='fail', 
             )
-            return redirect("/")
+        return redirect(reverse('payment', kwargs={'payment_id': payment.id}))
 
 
     else:
         return HttpResponseBadRequest()
+
+@login_required
+@require_GET
+def payment(request, payment_id):
+    payment = Payment.objects.get(id=payment_id)
+    return render(request, 'payments/confirmation.html', context={
+        'payment': payment
+    })
+
 
