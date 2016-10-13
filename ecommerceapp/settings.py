@@ -36,8 +36,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'collection',
-    'payments',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,8 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'registration',
     'django.contrib.sites',
+    'collection',
+    'payments',
+    'users',
+    'registration',
 ]
 
 SITE_ID = 1

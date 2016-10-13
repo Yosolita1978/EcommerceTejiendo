@@ -1,0 +1,65 @@
+
+{% extends 'layouts/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+{% load payment_button %}
+
+
+    <title>
+        {%block title %} {{request.user.username}} - {{block.super}}{% endblock %} 
+    </title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<body>
+
+{% block content %}
+<section id="profile_items">
+    <div class="container">
+        <div class="breadcrumbs">
+        <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Your Orders</li>
+        </ol>
+        
+        <table class="table table-condensed">
+        <thead>
+            <tr class="profile_table">
+                <td class="image">Item</td>
+                <td class="description">Description</td>
+                <td class="price">Price</td>
+                <td class="date">Date</td>
+                <td class="status">Status</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payment in payments %}
+
+            <tr>
+            <td><img class="img-responsive profile-product-image" src="{{payment.product.main_picture.image.url}}" alt=""></td>    
+            <td><p class="description">{{payment.product.description}}</p></td>
+            <td><p>{{payment.product.price}}</p></td>
+            <td><p>{{payment.date}}</p></td>
+            <td><span class="label {% if payment.status == 'succesful' %}label-success{% else %}label-danger{% endif %}">{{payment.status}}</span></td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</section>
+{% endblock %}
+        
+        <hr class="featurette-divider">
+
+        <footer>
+            {%block footer %} {{block.super}}{% endblock %} 
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

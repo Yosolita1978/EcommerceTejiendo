@@ -24,6 +24,8 @@ urlpatterns = patterns('',
 
     url(r'^payments/', include('payments.urls')),
 
+    url(r'^users/', include('users.urls')),
+
     url(r'^accounts/password/reset/$', password_reset, {'template_name': 'registration/password_reset_form.html'},
         name="password_reset"),
     url(r'^accounts/password/reset/done/$',
