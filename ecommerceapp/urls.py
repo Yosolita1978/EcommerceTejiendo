@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views.generic.base import TemplateView
 from django.conf import settings
+from users.views import contact
 from django.contrib.auth.views import (
     password_reset,
     password_reset_done,
@@ -17,8 +18,7 @@ urlpatterns = patterns('',
         TemplateView.as_view(template_name='about.html'),
         name='about'),
     url(r'^contact/$',
-        TemplateView.as_view(template_name='contact.html'),
-        name='contact'),
+        contact, name="contact"),
 
     url(r'^catalog/', include('collection.urls')),
 
